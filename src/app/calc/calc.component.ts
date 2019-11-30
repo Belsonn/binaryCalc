@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calc.component.css']
 })
 export class CalcComponent implements OnInit {
-  numberOne = '';
-  numberTwo = '';
+  numberOneBin = '';
+  numberTwoBin = '';
+  numberOneDecimal = '';
+  numberTwoDecimal = '';
   sum = '';
-  toggleButton = false;
   constructor() { }
 
   ngOnInit() {
@@ -25,11 +26,6 @@ export class CalcComponent implements OnInit {
   checkNumber(event) {
     if(event.key !== '1' && event.key !== 'Backspace' && event.key !== '0') {
       event.preventDefault();
-    }
-  }
-  toggleBtn() {
-    if(this.numberOne !== '' && this.numberTwo!== ''){
-      this.toggleButton = true;
     }
   }
 

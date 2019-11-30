@@ -1,24 +1,45 @@
 <div class="container">
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="calculator">
-        <div class="form-group labelform">
-          <Label>Podaj pierwszą liczbę:</Label>
-          <input type="text" class="form-control" placeholder="111001" [(ngModel)]="numberOne"
-          (keydown) = checkNumber($event) (keyup) = "toggleBtn()" (keyup) = "calcSum()">
+    <div class="row">
+        <div class="col-sm my-col">
+          <Label>Liczba dziesiętnie:</Label>
+          <input type="text" class="form-control userInput" placeholder="13">
         </div>
-        <div class="form-group labelform">
-          <Label>Podaj drugą liczbę:</Label>
-          <input type="text" class="form-control" placeholder="111001" [(ngModel)]="numberTwo"
-          (keydown) = "checkNumber($event)" (keyup) = "toggleBtn()" (keyup) = "calcSum()">
+        <div class="col-sm my-col">
+        <Label>Liczba binarnie:</Label>
+        <input type="text" class="form-control userInput" placeholder="1101">
         </div>
-        <button class="btn btn-primary ml-2" [disabled]="!toggleButton" (click) = "calcSum()">Policz!</button>
-      </div>
+        <div class="col-sm my-col">
+          <button class="btn btn-success">+</button>
+          <button class="btn btn-danger">-</button>
+        </div>
     </div>
-    <div class="col-sm-4">
-      <div class="results">
-        <p>Wynik: {{ sum }}</p>
-      </div>
+    <div class="row">
+        <div class="col-sm my-col">
+          <Label>Liczba dziesiętnie:</Label>
+          <input type="text" class="form-control userInput" placeholder="13">
+        </div>
+        <div class="col-sm my-col">
+        <Label>Liczba binarnie:</Label>
+        <input type="text" class="form-control userInput" placeholder="1101">
+        </div>
+        <div class="col-sm my-col">
+          <button class="btn btn-success">+</button>
+          <button class="btn btn-danger">-</button>
+        </div>
     </div>
-  </div>
+    <div class="row">
+        <div class="col-sm my-col">
+          <Label>Wynik(10)</Label>
+          <input type="text" class="form-control userInput" placeholder="13">
+        </div>
+        <div class="col-sm my-col">
+        <Label>Wynik(2)</Label>
+        <input type="text" class="form-control userInput" placeholder="1101">
+        </div>
+        <div class="col-sm my-col background-dark">
+            <div><i class="fa fa-calculator fa-5x calc-icon" aria-hidden="true"></i></div>
+        </div>
+    </div>
+
+
 </div>
