@@ -21,7 +21,7 @@
     margin-right: auto;
     
 }
-.myCol:first-child{
+.my-col:first-child{
     border-left: 1px #D6D5D4 solid;
 }
 
