@@ -31,45 +31,103 @@ export class CalcComponent implements OnInit {
     }
   }
   convertToBinary() {
-    if(this.numberOneDec!== ""){
+    if (this.numberOneDec !== "") {
       let number1 = parseInt(this.numberOneDec, 10);
       this.numberOneBin = number1.toString(2);
     }
-    if(this.numberTwoDec!== ""){
+    if (this.numberTwoDec !== "") {
       let number2 = parseInt(this.numberTwoDec, 10);
       this.numberTwoBin = number2.toString(2);
     }
   }
   convertToDecimal() {
-    if(this.numberOneBin!== ""){
+    if (this.numberOneBin !== "") {
       let number1 = parseInt(this.numberOneBin, 2);
       this.numberOneDec = number1.toString(10);
     }
-    if(this.numberTwoBin!== ""){
+    if (this.numberTwoBin !== "") {
       let number2 = parseInt(this.numberTwoBin, 2);
       this.numberTwoDec = number2.toString(10);
     }
   }
-  
-  makeCalcDec(){
+
+  makeCalcDec() {
     this.convertToBinary();
     this.calcSumDec();
     this.calcSumBin();
   }
-  makeCalcBin(){
+  makeCalcBin() {
     this.convertToDecimal();
     this.calcSumDec();
     this.calcSumBin();
   }
-  
+
   checkNumberBin(event) {
     if (event.key !== "1" && event.key !== "Backspace" && event.key !== "0") {
       event.preventDefault();
     }
   }
   checkNumberDecimal(event) {
-    if (event.key !== "1" && event.key !== "Backspace" && event.key !== "0" && event.key !== "2" && event.key !== "3" && event.key !== "4" && event.key !== "5" && event.key !== "6" && event.key !== "7" && event.key !== "8" && event.key !== "9") {
+    if (
+      event.key !== "1" &&
+      event.key !== "Backspace" &&
+      event.key !== "0" &&
+      event.key !== "2" &&
+      event.key !== "3" &&
+      event.key !== "4" &&
+      event.key !== "5" &&
+      event.key !== "6" &&
+      event.key !== "7" &&
+      event.key !== "8" &&
+      event.key !== "9"
+    ) {
       event.preventDefault();
+    }
+  }
+  addNumberOne() {
+    if (this.numberOneDec !== "") {
+      let num = parseInt(this.numberOneDec, 10) + 1;
+      this.numberOneDec = num.toString();
+      this.makeCalcDec();
+    } else {
+      this.numberOneDec = "1";
+      this.makeCalcDec();
+    }
+  }
+  addNumberTwo() {
+    if (this.numberTwoDec !== "") {
+      let num = parseInt(this.numberTwoDec, 10) + 1;
+      this.numberTwoDec = num.toString();
+      this.makeCalcDec();
+    } else {
+      this.numberTwoDec = "1";
+      this.makeCalcDec();
+    }
+  }
+  subNumberOne() {
+    if (this.numberOneDec !== "") {
+      let num = parseInt(this.numberOneDec, 10);
+      if (num > 0) {
+        num -= 1;
+        this.numberOneDec = num.toString();
+        this.makeCalcDec();
+      }
+    } else {
+      this.numberOneDec = "0";
+      this.makeCalcDec();
+    }
+  }
+  subNumberTwo() {
+    if (this.numberTwoDec !== "") {
+      let num = parseInt(this.numberTwoDec, 10);
+      if (num > 0) {
+        num -= 1;
+        this.numberTwoDec = num.toString();
+        this.makeCalcDec();
+      }
+    } else {
+      this.numberTwoDec = "0";
+      this.makeCalcDec();
     }
   }
 }

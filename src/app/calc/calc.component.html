@@ -9,8 +9,8 @@
         <input type="text" class="form-control userInput" placeholder="np. 1101" [(ngModel)]="numberOneBin" (keyup) = "makeCalcBin()" (keydown)= "checkNumberBin($event)">
         </div>
         <div class="col-sm my-col">
-          <button class="btn btn-success">+</button>
-          <button class="btn btn-danger">-</button>
+          <button class="btn btn-success" (click)= "addNumberOne()">+</button>
+          <button class="btn btn-danger" (click)= "subNumberOne()">-</button>
         </div>
     </div>
     <div class="row">
@@ -23,8 +23,8 @@
         <input type="text" class="form-control userInput" placeholder="np. 101" [(ngModel)]="numberTwoBin" (keyup) = "makeCalcBin()" (keydown)= "checkNumberBin($event)">
         </div>
         <div class="col-sm my-col">
-          <button class="btn btn-success">+</button>
-          <button class="btn btn-danger">-</button>
+          <button class="btn btn-success" (click)= "addNumberTwo()">+</button>
+          <button class="btn btn-danger" (click)= "subNumberTwo()">-</button>
         </div>
     </div>
     <div class="row">
