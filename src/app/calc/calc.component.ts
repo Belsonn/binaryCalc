@@ -26,7 +26,6 @@ export class CalcComponent implements OnInit {
     if(event.key !== '1' && event.key !== 'Backspace' && event.key !== '0') {
       event.preventDefault();
     }
-    this.toggleBtn();
   }
   toggleBtn() {
     if(this.numberOne !== '' && this.numberTwo!== ''){

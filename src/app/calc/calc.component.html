@@ -5,12 +5,12 @@
         <div class="form-group labelform">
           <Label>Podaj pierwszą liczbę:</Label>
           <input type="text" class="form-control" placeholder="111001" [(ngModel)]="numberOne"
-          (keydown) = checkNumber($event)>
+          (keydown) = checkNumber($event) (keyup) = "toggleBtn()" (keyup) = "calcSum()">
         </div>
         <div class="form-group labelform">
           <Label>Podaj drugą liczbę:</Label>
           <input type="text" class="form-control" placeholder="111001" [(ngModel)]="numberTwo"
-          (keydown) = "checkNumber($event)">
+          (keydown) = "checkNumber($event)" (keyup) = "toggleBtn()" (keyup) = "calcSum()">
         </div>
         <button class="btn btn-primary ml-2" [disabled]="!toggleButton" (click) = "calcSum()">Policz!</button>
       </div>
