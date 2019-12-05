@@ -1,45 +1,76 @@
 <div class="container">
-    <div class="row">
-        <div class="col-sm my-col">
-          <Label>Liczba dziesiętnie:</Label>
-          <input type="text" class="form-control userInput" placeholder="np. 13" [(ngModel)]="numberOneDec" (keyup) = "makeCalcDec()" (keydown) = "checkNumberDecimal($event)">
-        </div>
-        <div class="col-sm my-col">
-        <Label>Liczba binarnie:</Label>
-        <input type="text" class="form-control userInput" placeholder="np. 1101" [(ngModel)]="numberOneBin" (keyup) = "makeCalcBin()" (keydown)= "checkNumberBin($event)">
-        </div>
-        <div class="col-sm my-col">
-          <button class="btn btn-success" (click)= "addNumberOne()">+</button>
-          <button class="btn btn-danger" (click)= "subNumberOne()">-</button>
-        </div>
+  <div class="row my-3 bord-bot">
+    <div class="col-sm-5 text-center px-4 py-3">
+      <Label class="h3">Liczba dziesiętnie:</Label>
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg" placeholder="np. 13" [(ngModel)]="numberOneDec"
+          (keyup)="makeCalcDec()" (keydown)="checkNumberDecimal($event)">
+      </div>
+
     </div>
-    <div class="row">
-        <div class="col-sm my-col">
-          <Label>Liczba dziesiętnie:</Label>
-          <input type="text" class="form-control userInput" placeholder="np. 5" [(ngModel)]="numberTwoDec" (keyup) = "makeCalcDec()" (keydown) = "checkNumberDecimal($event)">
-        </div>
-        <div class="col-sm my-col">
-        <Label>Liczba binarnie:</Label>
-        <input type="text" class="form-control userInput" placeholder="np. 101" [(ngModel)]="numberTwoBin" (keyup) = "makeCalcBin()" (keydown)= "checkNumberBin($event)">
-        </div>
-        <div class="col-sm my-col">
-          <button class="btn btn-success" (click)= "addNumberTwo()">+</button>
-          <button class="btn btn-danger" (click)= "subNumberTwo()">-</button>
-        </div>
+    <div class="col-sm-5 text-center px-4 py-3">
+      <Label class="h3">Liczba binarnie:</Label>
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg" placeholder="np. 1101" [(ngModel)]="numberOneBin"
+          (keyup)="makeCalcBin()" (keydown)="checkNumberBin($event)">
+      </div>
     </div>
-    <div class="row">
-        <div class="col-sm my-col">
-          <Label>Wynik(10)</Label>
-          <input type="text" class="form-control userInput" placeholder="Wynik: 18" readonly [(ngModel)]="sumDec">
-        </div>
-        <div class="col-sm my-col">
-        <Label>Wynik(2)</Label>
-        <input type="text" class="form-control userInput" placeholder="Wynik: 10010" readonly [(ngModel)]="sumBin">
-        </div>
-        <div class="col-sm my-col background-dark">
-            <div><i class="fa fa-calculator fa-5x calc-icon" aria-hidden="true"></i></div>
-        </div>
+    <div class="col-sm-2 text-center px-4 py-3 my-5">
+      <button class="btn btn-success px-4 mx-1" (click)="addNumberOne()">+</button>
+      <button class="btn btn-danger px-4 mx-1" (click)="subNumberOne()">-</button>
     </div>
+  </div>
+
+  <div class="row my-3 bord-bot">
+    <div class="col-sm-5 text-center px-4 py-3">
+      <Label class="h3">Liczba dziesiętnie:</Label>
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg" placeholder="np. 5" [(ngModel)]="numberTwoDec" (keyup)="makeCalcDec()"
+          (keydown)="checkNumberDecimal($event)">
+      </div>
+
+    </div>
+    <div class="col-sm-5 text-center px-4 py-3">
+      <Label class="h3">Liczba binarnie:</Label>
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg" placeholder="np. 101" [(ngModel)]="numberTwoBin"
+          (keyup)="makeCalcBin()" (keydown)="checkNumberBin($event)">
+      </div>
+    </div>
+    <div class="col-sm-2 text-center px-4 py-3 my-5">
+      <button class="btn btn-success px-4 mx-1" (click)="addNumberTwo()">+</button>
+      <button class="btn btn-danger px-4 mx-1" (click)="subNumberTwo()">-</button>
+    </div>
+  </div>
+
+  <div class="row my-3 bord-bot">
+    <div class="col-sm-5 text-center px-4 py-3">
+      <Label class="h3">Wynik(2)</Label>
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg" placeholder="Wynik: 18" readonly [(ngModel)]="sumDec">
+      </div>
+
+    </div>
+    <div class="col-sm-5 text-center px-4 py-3">
+      <Label class="h3">Wynik(10):</Label>
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg" placeholder="Wynik: 10010" readonly [(ngModel)]="sumBin">
+      </div>
+    </div>
+    <div class="col-sm-2 text-center px-4 py-3 mb-3">
+      <button class="btn btn-size-prim px-4 mx-1 my-3"
+        [ngClass]="{'btn-success': sum === true, 'btn-danger': sum === false}" (click)="sumToTrue()">DODAWANIE</button>
+      <button class="btn btn-size-prim px-4 mx-1 my-3"
+        [ngClass]="{'btn-success': sum === false, 'btn-danger': sum === true}"
+        (click)="sumToFalse()">ODEJMOWANIE</button>
+    </div>
+  </div>
 
 
 </div>

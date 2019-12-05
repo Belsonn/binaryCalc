@@ -13,6 +13,7 @@ export class CalcComponent implements OnInit {
   numberTwoDec = "";
   sumBin = "";
   sumDec = "";
+  sum: boolean = false;
   constructor() {}
 
   ngOnInit() {}
@@ -30,6 +31,14 @@ export class CalcComponent implements OnInit {
       this.sumDec = sum.toString();
     }
   }
+
+  calcSubDec() {
+    if (this.numberOneDec !== "" && this.numberTwoDec !== ""){
+      let sum = parseInt(this.numberOneDec) - parseInt(this.numberTwoDec);
+      this.sumDec = sum.toString();
+    }
+  }
+
   convertToBinary() {
     if (this.numberOneDec !== "") {
       let number1 = parseInt(this.numberOneDec, 10);
@@ -53,13 +62,25 @@ export class CalcComponent implements OnInit {
 
   makeCalcDec() {
     this.convertToBinary();
-    this.calcSumDec();
-    this.calcSumBin();
+    if (this.sum) {
+      this.calcSumDec();
+      this.calcSumBin();
+    }
+    else{
+      this.calcSubDec();
+      this.calcSumBin();
+    }
   }
   makeCalcBin() {
     this.convertToDecimal();
-    this.calcSumDec();
-    this.calcSumBin();
+    if (this.sum) {
+      this.calcSumDec();
+      this.calcSumBin();
+    }
+    else{
+      this.calcSubDec();
+      this.calcSumBin();
+    }
   }
 
   checkNumberBin(event) {
@@ -129,5 +150,16 @@ export class CalcComponent implements OnInit {
       this.numberTwoDec = "0";
       this.makeCalcDec();
     }
+  }
+
+  sumToTrue() {
+    this.sum = true;
+    this.makeCalcDec();
+    this.makeCalcBin();
+  }
+  sumToFalse() {
+    this.sum = false;
+    this.makeCalcDec();
+    this.makeCalcBin();
   }
 }
