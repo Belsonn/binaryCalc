@@ -1,41 +1,7 @@
-.container{
-    height: 90vh;
-    max-width: 1300px;
+.bord-bot{
+    border-bottom: 1px #333 solid;
 }
-
-.row{
-    margin: 3rem 0;
-    border-bottom: 1px #D6D5D4 solid;
-}
-
-.my-col{
-    text-align: center;
-    border-right: 1px #D6D5D4 solid;
-    margin: 0.5rem 0.5rem 3rem 0.5rem;
-}
-
-.userInput{
-    width: 15rem;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-.my-col:first-child{
-    border-left: 1px #D6D5D4 solid;
-}
-
-label{
-    letter-spacing: 1px;
-    line-height: 1.7;
-    font-weight: 600;
-    font-size: 1.3rem;
-}
-
-.btn {
-    margin: 2.5rem 2rem 0 2rem;
-    width: 6rem;
-}
-
-.calc-icon{
-    color: #AF1D1D;
+.btn-size-prim {
+    width: 10rem;
+    font-size: 0.9rem;
 }
