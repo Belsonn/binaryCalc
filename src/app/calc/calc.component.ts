@@ -13,7 +13,7 @@ export class CalcComponent implements OnInit {
   numberTwoDec = "";
   sumBin = "";
   sumDec = "";
-  sum: boolean = false;
+  sum: boolean = true;
   constructor() {}
 
   ngOnInit() {}
